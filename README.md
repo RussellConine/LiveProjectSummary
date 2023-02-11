@@ -59,3 +59,64 @@ The weather data is displayed by retrieving it from the Python dictionary and di
                 <td>{{ forecast_period }}</td>
                 <td>{{ forecast }}</td>
             </tr>
+            
+            
+## Front End
+* [Table Content](#table-display)
+* [Table Styling](#table-styling)
+
+### Table Content
+All tables receive their data from Django views. This data comes from either the database, or from the weather API. Below is an example of a table which contains data from the database, which is a reult of reading all Ski objects contained in the database. 
+
+        <table class="table table-responsive" id="ski-table">
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Length</th>
+                <th>Width</th>
+                <th>Terrain</th>
+                <th>View Ski Details</th>
+            </tr>
+            {% for e in entry %}
+            <tr>
+                <td>{{e.brand}}</td>
+                <td>{{e.ski_model}}</td>
+                <td>{{e.ski_length}}</td>
+                <td>{{e.ski_width}}</td>
+                <td>{{e.terrain}}</td>
+                <td><a href="{% url 'details' e.id %}"><button type="button" class="classic-button">Details</button></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+### Table Styling
+The styling of all tables and their buttons was unified across the various pages on the website. 
+
+      /* make every other row an alternating color */
+      #ski-table tr:nth-child(even){
+          background-color: rgb(255, 236, 220);
+      }
+
+      #ski-table th {
+          background-color: rgb(255, 183, 142);
+      }
+
+      #ski-table tr:hover {
+          background-color: white;
+      }
+
+      #ski-table tr {
+          background-color: #a2a2a2;
+      }
+
+      #ski-table a:hover {
+          text-decoration: none;
+      }
+      .classic-button, .details-button, .edit-button{
+          border: none;
+          background-color: var(--navbar-color);
+          width: 100%;
+          border-radius: 3px;
+          color: white;
+      }
