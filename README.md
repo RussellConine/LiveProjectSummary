@@ -61,6 +61,7 @@ The weather data is displayed by retrieving it from the Python dictionary and di
             </tr>
             
             
+
 ## Front End
 * [Table Content](#table-display)
 * [Table Styling](#table-styling)
