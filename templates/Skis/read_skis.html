@@ -1,0 +1,29 @@
+{% extends 'skis_base.html' %}
+{% block title %}View Quiver{% endblock %}
+{% block content %}
+    <div id="header-box">
+        <h3>What's in your Quiver?</h3>
+    </div>
+    <div class="main-content">
+        <table class="table table-responsive" id="ski-table">
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Length</th>
+                <th>Width</th>
+                <th>Terrain</th>
+                <th>View Ski Details</th>
+            </tr>
+            {% for e in entry %}
+            <tr>
+                <td>{{e.brand}}</td>
+                <td>{{e.ski_model}}</td>
+                <td>{{e.ski_length}}</td>
+                <td>{{e.ski_width}}</td>
+                <td>{{e.terrain}}</td>
+                <td><a href="{% url 'details' e.id %}"><button type="button" class="classic-button">Details</button></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

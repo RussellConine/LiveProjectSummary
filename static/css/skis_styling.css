@@ -1,0 +1,244 @@
+
+:root {
+    --navbar-color: rgba(101, 128, 170);
+    --content-box-color: rgb(207, 211, 214);
+    --box-shadow-color: rgba(56, 55, 54, 0.6);
+    --footer-color: #a2a2a2;
+    --dark-button-color: rgb(23, 38, 78);
+}
+
+/************************
+      Body Styling
+************************/
+
+body {
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    text-align: center;
+}
+
+.main-background {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* add pseudo element to allow transparency on background image without transparency in child elements */
+.main-background::before {
+    content: "";
+    background: url(../images/mtns.jpg);
+    background-size: cover;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    top: 61px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.5;
+    filter: sepia(1);
+}
+
+.main-container {
+    position: absolute;
+    color: black;
+    text-justify: center;
+    overflow: auto;
+}
+/************************
+      Navbar Styling
+************************/
+
+.Navbar {
+    overflow: auto; /* This ensures that any content that overflows beyond the boundary of our nav bar is not displayed */
+    background-color: rgba(101, 128, 170);
+    position: fixed; /* This keeps the navbar at the top of the screen as we scroll */
+    top: 0; /* This ensures no space is displayed above the navbar */
+    width: 100%; /* This makes the navbar span the entire width of the page */
+    z-index: 1;
+}
+
+ /*Navbar links */
+.Navbar a {
+    float: left; /* This specifies that the text floats on the left on the navbar */
+    display: block; /* This ensures that other text will be displayed on the same line or row, instead of a new line */
+    color: white; /* This is the font color for text on our navbar */
+    padding: 14px 8px; /* This adds padding around our text */
+    text-decoration: none; /* This gets rid of the underlines under the text on our navbar */
+    font-size: 18px; /* This specifies the font size for text on our navbar */
+    text-align: center; /* This centers the text within its container */
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 2px;
+}
+
+
+/************************
+  Begin Footer Styling
+************************/
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1% 1% 0% 1%; /* This gives the footer padding that is equal to 2% of the width of the element's area */
+    background-color: var(--footer-color);
+    text-align: right;
+}
+
+
+/************************
+    Begin Form Styling
+************************/
+form, table {
+    font-size: 15px;
+    outline: none;
+    font-weight: 600;
+    padding: 12px 50px;
+    width: 100%;
+    border: 3px solid var(--navbar-color);
+    margin: 2% auto;
+    border-radius: 7px;
+    background: var(--content-box-color);
+    box-shadow: 3px 3px 5px var(--box-shadow-color);
+    display: block;
+}
+
+label {
+    width: 125px;
+    margin-left: 10px;
+    font-weight: bold;
+    opacity: initial;
+}
+
+input, select {
+    width: 300px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px var(--box-shadow-color);
+}
+
+
+/************************
+    Begin Table and button Styling
+************************/
+/* make every other row an alternating color */
+#ski-table tr:nth-child(even){
+    background-color: rgb(255, 236, 220);
+}
+
+#ski-table th {
+    background-color: rgb(255, 183, 142);
+}
+
+#ski-table tr:hover {
+    background-color: white;
+}
+
+#ski-table tr {
+    background-color: #a2a2a2;
+}
+
+.classic-button, .details-button, .edit-button{
+    border: none;
+    background-color: var(--navbar-color);
+    width: 100%;
+    border-radius: 3px;
+    color: white;
+}
+
+#ski-table a:hover {
+    text-decoration: none;
+}
+
+.details-button {
+    width: 46%;
+    margin-left: 2%;
+}
+
+.edit-button {
+    width: 46%;
+    float: right;
+    margin-right: 2%;
+    /* override assigned background color to all buttons*/
+    background-color: var(--dark-button-color);
+}
+
+/* give button on read-skis table and ski_details table the same styling */
+.classic-button:hover, #ski-table button:hover, .details-button:hover {
+    background-color: var(--dark-button-color);
+}
+
+.edit-button:hover {
+    background-color: var(--navbar-color);
+}
+
+/* give links on button on read-skis table and ski_details table the same styling */
+#ski-table a, .details-button a, .edit-button a {
+    color: white;
+}
+
+.details-button a:hover, .edit-button a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.table-container{
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.weather-table {
+    max-width: 80%;
+    margin: 15px auto;
+    overflow: auto;
+    position: static;
+}
+
+.weather-table th, .weather-table td {
+    border-right: solid white;
+    border-left: solid white;
+}
+
+.weather-table th {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+/************************
+    Begin Header box
+************************/
+#header-box {
+    margin: 0 20% 0 20%;
+    background-color: var(--navbar-color);
+    color: white;
+    font-weight: bold;
+    padding-top: 6px;
+    padding-bottom: 3px;
+    border-radius: 6px;
+    box-shadow: 3px 3px 5px rgb(202, 130, 47);
+}
+
+
+#main-header-box {
+    margin: 0;
+    background-color: var(--dark-button-color);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 6px;
+    box-shadow: 3px 3px 5px rgb(202, 130, 47);
+}

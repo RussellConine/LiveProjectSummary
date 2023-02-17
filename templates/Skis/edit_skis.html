@@ -1,0 +1,18 @@
+{% extends 'skis_base.html' %}
+{% block title %}Edit Ski{% endblock %}
+{% block content %}
+    <div id="header-box">
+        <h3>Edit Ski</h3>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="classic-button">Save Changes</button>
+    </form>
+
+        <!-- Delete and go to delete confirmation page -->
+        <a href="{% url 'delete_ski' pk %}"><button class="edit-button">Delete</button></a>
+        <!-- Cancel edit and go back to ski details page -->
+        <a href="{% url 'details' pk %}"><button class="details-button">Cancel</button></a>
+
+{% endblock %}

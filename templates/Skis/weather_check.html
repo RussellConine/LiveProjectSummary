@@ -1,0 +1,23 @@
+{% extends 'skis_base.html' %}
+{% block title %}Ski Weather{% endblock %}
+{% block content %}
+    <div id="header-box">
+	    <h3>Weather at Timberline Lodge</h3>
+    </div>
+    <div class="table-container">
+        <table class="table table-responsive weather-table" id="ski-table">
+            <tr>
+                <th>Forecast Period</th>
+                <th>Forecast</th>
+            </tr>
+
+            <!-- in dictionary, forecast period name (like today, tomorrow, Wednesday, etc) is key, and forecast is value -->
+            {% for forecast_period, forecast in wx_dict.items %}
+            <tr>
+                <td>{{ forecast_period }}</td>
+                <td>{{ forecast }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

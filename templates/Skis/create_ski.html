@@ -1,0 +1,15 @@
+{% extends 'skis_base.html' %}
+{% block title %}Add Ski{% endblock %}
+{% block content %}
+    <div id="header-box">
+		<h3>Add Ski to the Quiver</h3>
+	</div>
+	<div id="ski-form">
+		<form method="POST">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button class="classic-button" type="submit" name="Save_Ski">Create Ski</button>
+		</form>
+		<br>
+	</div>
+{% endblock %}

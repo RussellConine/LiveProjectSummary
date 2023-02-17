@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{% static '/css/skis_styling.css' %}">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<title>{% block title%}{% endblock %}</title>
+	</head>
+	<header>
+	</header>
+
+
+	<body id="body">
+
+            <div class="Navbar">
+                <a class="active" title="Home" href="{% url 'skis_home' %}">Home</a>
+                <a href="{% url 'create_ski' %}" title="Add Ski to the Quiver!">Add Ski to the Quiver!</a>
+                <a href="{% url 'read_all_skis' %}" title="View All Saved Skis">View All Saved Skis</a>
+                <a href="{% url 'weather_check' %}" title="Check Ski Weather">Check Ski Weather</a>
+            </div>
+
+            <div class="main-background">
+				<div class="main-container">
+						{% block content %}{% endblock %}
+				</div>
+			</div>
+
+
+
+
+		<footer>
+			<p id="footer-left">&copy;2023 | Russell Conine</p>
+		</footer>
+	</body>
+</html>

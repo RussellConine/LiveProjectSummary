@@ -1,0 +1,19 @@
+{% extends 'skis_base.html' %}
+{% block title %}Delete Ski{% endblock %}
+{% block content %}
+    <div id="header-box">
+	    <h3>Delete Ski</h3>
+    </div>
+    <form method="POST" action=".">
+        {% csrf_token %}
+        <h2>Confirm Delete</h2>
+        <p>Are you sure you would like to delete "{{ item }}" from the database?</p>
+
+        <!-- Cancel and go back to edit ski page -->
+        <a href="{% url 'ski_edit' item.id %}"><button class="details-button" type="button">Cancel</button></a>
+        <!-- Submit and confirm deletion -->
+        <input type="submit" value="Yes, delete it!" class="edit-button">
+
+    </form>
+
+{% endblock %}

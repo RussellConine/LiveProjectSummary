@@ -1,0 +1,29 @@
+{% extends 'skis_base.html' %}
+{% block title %}Details{% endblock %}
+{% block content %}
+    <!-- create table listing details for one ski; use same classes and id as ski table (from read_skis) so styling matches -->
+    <div id="header-box">
+	    <h3>Selected Ski Details</h3>
+    </div>
+    <table class="table table-responsive" id="ski-table">
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Length/Width</th>
+            <th>Terrain</th>
+            <th>Color</th>
+        </tr>
+        <!-- list detail for specific ski item -->
+        <tr>
+            <td>{{details.brand}}</td>
+            <td>{{details.ski_model}}</td>
+            <td>{{details.ski_length}}/{{details.ski_width}}</td>
+            <td>{{details.terrain}}</td>
+            <td>{{details.color}}</td>
+        </tr>
+    </table>
+    <!-- go back to read skis page -->
+    <a href="{% url 'read_all_skis' %}"><button class="details-button">Return to Quiver</button></a>
+    <!-- edit ski details  -->
+    <a href="{% url 'ski_edit' details.pk %}"><button class="edit-button">Edit Ski</button></a>
+{% endblock %}
